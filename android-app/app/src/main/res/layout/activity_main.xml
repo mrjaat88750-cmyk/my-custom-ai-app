@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/inputTrigger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="नियम का शब्द (जैसे: नमस्ते)" />
+
+    <EditText
+        android:id="@+id/inputReply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="AI का जवाब" />
+
+    <Button
+        android:id="@+id/btnSaveRule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="नियम सेव करें" />
+
+    <EditText
+        android:id="@+id/inputQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="अपना सवाल लिखें" />
+
+    <Button
+        android:id="@+id/btnAsk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="जवाब पाएं" />
+
+    <TextView
+        android:id="@+id/textAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="यहाँ जवाब दिखेगा"
+        android:textSize="16sp" />
+</LinearLayout>
