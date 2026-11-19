@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
             val bitmap = generateImageFromPrompt(prompt)
             imagePreview.setImageBitmap(bitmap)
-            textStatus.text = "प्रॉम्प्ट से इमेज तैयार हुई: \"$prompt\""
+            textStatus.text = "इमेज तैयार हुई: $prompt"
         }
     }
 
@@ -52,10 +52,9 @@ class MainActivity : AppCompatActivity() {
         canvas.drawColor(bgColor)
 
         val paint = Paint(Paint.ANTI_ALIAS_FLAG)
-        val seed = prompt.hashCode()
-        val rnd = Random(seed)
+        val rnd = Random(prompt.hashCode())
 
-        for (i in 1..18) {
+        for (i in 1..16) {
             paint.color = Color.argb(
                 190,
                 rnd.nextInt(50, 255),
@@ -64,7 +63,7 @@ class MainActivity : AppCompatActivity() {
             )
             val cx = rnd.nextFloat() * width
             val cy = rnd.nextFloat() * height
-            val radius = rnd.nextFloat() * 90f + 20f
+            val radius = rnd.nextFloat() * 85f + 20f
 
             if ("square" in p || "बॉक्स" in p) {
                 canvas.drawRect(cx - radius / 2, cy - radius / 2, cx + radius / 2, cy + radius / 2, paint)
@@ -74,8 +73,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         paint.color = Color.WHITE
-        paint.textSize = 26f
-        canvas.drawText(prompt.take(36), 24f, height - 30f, paint)
+        paint.textSize = 24f
+        canvas.drawText(prompt.take(32), 24f, height - 28f, paint)
 
         return bmp
     }
