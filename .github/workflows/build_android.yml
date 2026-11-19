@@ -25,7 +25,7 @@ jobs:
 
       - name: Build Debug APK
         working-directory: android-app
-        run: gradle assembleDebug --no-daemon
+        run: gradle assembleDebug --stacktrace --no-daemon
 
       - name: Upload APK Artefact
         uses: actions/upload-artifact@v4
